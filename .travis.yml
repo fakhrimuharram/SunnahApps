@@ -1,0 +1,32 @@
+#tentukan role | sudoer -> user (bos)
+sudo: required
+
+#OS yang akan dipakai
+#OS -> precies, trusty, xenial
+dist : trusty
+
+#bahasa yang digunakan
+language : php
+
+#versi bahasa yang digunakan
+php :
+    - 7.1
+
+#tentukan branch
+branches :
+    only:
+      -master #-> QA/Staging
+      -develop #-> DevServer
+
+#before install
+before_install:
+    -wget https://phar.phpunit.de/phpunit-6.5.phar
+    -chmod +x phpunit-6.5.phar
+    -sudo mv phpunit-6.5.phar /usr/local/bin/phpunit
+    -phpunit --version
+#install
+install:
+#before script -> sebelum melakukan main execution
+before_script:
+#script -> Main Execution
+script:
