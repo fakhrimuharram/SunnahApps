@@ -1,3 +1,1 @@
-<?php
-	echo "Belajar Continous Integration";
-?>
+cok
