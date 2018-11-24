@@ -26,6 +26,7 @@ before_script:
   - php artisan key:generate 
 #script -> Main Execution
 script:
+  - ./vendor/bin/phpunit
 
 #Ketika kondisi main execution finish
 after_succsess:
